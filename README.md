@@ -1,5 +1,15 @@
 # Integrações com Banco de Dados para Oracle Integration
 
+### Introdução
+
+Em situações em que o OIC precisa trabalhar com banco de dados Oracle, porém a versão 11g, o OIC não conta com suporte para trabalhar com o Adapter. Logo, a saída para podermos acessar o banco 11g é trabalhar com ORDS (Oracle REST Data Source). Este componente permite expor as tabelas e procedures do banco Oracle 11g através de serviço REST o que possibilita o OIC de fazer estes acessos.
+
+O objetivo deste documento é mostrar que:
+
+- É possível planejar o acesso ao banco de dados Oracle 11g através do ORDS
+- É possível planejar uma migração de banco de dados Oracle para uma versão mais recente (o Adapter do OIC já é compatível com estas versões mais novas)
+- É possível abstrair a camada de acesso ao banco, isolando-a de uma integração, o que possibilita trocar um tipo de acesso por outro (ORDS por Adapter)
+
 ### Pre-Requisitos
 
 - ORDS devidamente configurado ao banco de dados alvo
