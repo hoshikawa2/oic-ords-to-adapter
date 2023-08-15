@@ -1,22 +1,3 @@
-- Estratégia para justificar ORDS vs Adapter
-    - Integração principal: Mantém
-    - Criar 2 integrações específicas de interface com o banco
-        - ORDS: JSON mesmo
-        - Adapter: JSON mesmo
-        - Mudanças ocorrem na reescrita deste componente
-        - Excluir o artefato ORDS e Importar o artefato Adapter: OK?????
-- Estratégia para Performance: Tempos aqui são diferentes. Queries maiores tendem a ter o mesmo tempo em ORDS ou Adapter (TESTAR HIPOTESE)
-    - Integração Principal
-    - Integração de chamada ao banco
-        - Warm-up de conector
-            - Adapter
-            - ORDS
-        - Transmissão da query para Banco de Dados
-        - Processamento de Banco de Dados
-        - Retorno dos dados
-            - Adapter
-            - ORDS
-
 # Integrações com Banco de Dados para Oracle Integration
 
 ### Pre-Requisitos
@@ -73,7 +54,7 @@ Como padrão, criar uma integração como trigger REST e estabelecer um caminho 
 
 ![img_13.png](img_13.png)
 
-![img_14.png](img_14.png)
+![img_32.png](img_32.png)
 
 > Importante: Esta parte da configuração acima deve ser idêntica tanto para definir acessos do tipo ORDS como do tipo OIC Adapter.
 
@@ -89,11 +70,10 @@ Agora vamos configurar a chamada ao banco de dados através do serviço ORDS:
 
 Você vai precisar chamar o serviço ORDS correspondente para obter o JSON e incluir na configuração do OIC:
 
-![img_19.png](img_19.png)
-
+![img_33.png](img_33.png)
 Agora inclua o JSON obtido no OIC e finalize a configuração:
 
-![img_20.png](img_20.png)
+![img_34.png](img_34.png)
 
 Pronto! Agora vamos finalizar as cofigurações mapeando os parâmetros de entrada e saída do serviço
 ![img_21.png](img_21.png)
@@ -110,7 +90,7 @@ Agora vamos configurar o retorno
 
 ![img_25.png](img_25.png)
 
-![img_26.png](img_26.png)
+![img_35.png](img_35.png)
 
 Clique em Validate e Close e finalize a configuração
 
@@ -120,10 +100,23 @@ Finalize a configuração se sua chamada REST em ORDS com a parametrização dos
 
 ![img_28.png](img_28.png)
 
+![img_29.png](img_29.png)
+
+![img_30.png](img_30.png)
+
+![img_31.png](img_31.png)
 
 
 
 > Importante: Defina as estruturas JSON de entrada e saída mais o caminho do serviço REST de forma idêntica para implementações com chamadas ORDS e Adapter OIC
+
+Teste sua integração com chamada via ORDS
+
+![img_37.png](img_37.png)
+
+![img_36.png](img_36.png)
+
+> Importante: Exporte sua integração SELECT ADAPTER pois iremos demonstrar como migrar uma integração ou outra (ORDS ou Adapter). Após a exportação, valide se o artefato .iar foi gerado e delete sua integração.
 
 ### Criar a integração de chamada ao banco de dados por Adapter
 
@@ -131,13 +124,64 @@ Criar uma conexão para o Banco de Dados Oracle através de seu Adapter correspo
 
 ![img_2.png](img_2.png)
 
-Como padrão, criar uma integração como trigger REST e estabelecer um caminho de chamada como mostra o exemplo abaixo:
+Como padrão, criar uma integração como trigger REST e estabelecer um caminho de chamada como mostra o exemplo abaixo. Este início é exatamente idêntico ao padrão criado para ORDS.
+
+> Importante: Abaixo selecionamos o nome SELECT_ADAPTER exatamente como construído para a chamada ORDS. Isso só poderá ser feito caso você tenha deletado a integração anterior de ORDS. Caso queira manter as 2 integrações, escolha um nome diferente.
+
+![img_4.png](img_4.png)
+
+![img_5.png](img_5.png)
+
+![img_6.png](img_6.png)
+
+![img_10.png](img_10.png)
+
+![img_11.png](img_11.png)
+
+![img_12.png](img_12.png)
+
+![img_13.png](img_13.png)
+
+![img_32.png](img_32.png)
+
+> Importante: Esta parte da configuração acima deve ser idêntica tanto para definir acessos do tipo ORDS como do tipo OIC Adapter.
+
+Vamos construir o acesso ao banco de dados através do adapter OIC. 
+
+![img_38.png](img_38.png)
+
+![img_39.png](img_39.png)
+
+![img_40.png](img_40.png)
+
+![img_41.png](img_41.png)
+
+![img_42.png](img_42.png)
+
+![img_43.png](img_43.png)
+
+![img_46.png](img_46.png)
+
+![img_47.png](img_47.png)
+
+![img_48.png](img_48.png)
 
 Defina também a estrutura JSON para os parâmetros de entrada e também os de saída.
 
-Defina como será feita a query
+![img_49.png](img_49.png)
 
-Defina o mapeamento da query para o JSON de saída
+![img_50.png](img_50.png)
+
+![img_51.png](img_51.png)
+
+![img_52.png](img_52.png)
+
+Da mesma forma como na integração por ORDS, execute o teste para validar.
+
+![img_37.png](img_37.png)
+
+![img_36.png](img_36.png)
+
 
 ### Criar a integração principal com chamada para o banco de dados
 
@@ -146,15 +190,78 @@ Isto dará a capacidade de migração sem muito esforço no caso de necessidade 
 
 Desta forma, definir a orquestração e realizar as chamadas ao banco de dados através de uma chamada do tipo "Local" conforme abaixo:
 
-Realizar o mapeamento da entrada e saída conforme a definição da estrutura JSON
+![img_53.png](img_53.png)
+
+![img_54.png](img_54.png)
+
+![img_55.png](img_55.png)
+
+![img_56.png](img_56.png)
+
+![img_58.png](img_58.png)
+
+![img_57.png](img_57.png)
+
+![img_59.png](img_59.png)
+
+![img_60.png](img_60.png)
+
+![img_61.png](img_61.png)
+
+Até aqui, é muito parecido com as integrações anteriores, porém é nesta camada de integração que as orquestrações, transformações de negócios ou outros processos devem ser implementados.
+Lembre, é aqui que a integração ocorre, quer seja por acesso via ORDS ou via Adapter OIC.
+
+Agora vamos implementar a chamada para o banco de dados através da integração específica via ORDS ou Adapter
+
+![img_62.png](img_62.png)
+
+![img_63.png](img_63.png)
+
+![img_64.png](img_64.png)
+
+![img_65.png](img_65.png)
+
+![img_66.png](img_66.png)
+
+E agora vamos configurar os parametros de entrada e a saída JSON
+
+![img_67.png](img_67.png)
+
+![img_68.png](img_68.png)
+
+![img_69.png](img_69.png)
+
+![img_70.png](img_70.png)
+
+Vamos configurar as informações de tracking e testar a integração
+
+![img_71.png](img_71.png)
+
+![img_72.png](img_72.png)
+
+![img_73.png](img_73.png)
+
+![img_74.png](img_74.png)
+
+![img_75.png](img_75.png)
+
+![img_76.png](img_76.png)
+
+Sucesso! Sua integração principal foi implementada com sucesso.
 
 ### Promovendo a troca de ORDS para Adapter
 
 Promover a troca das chamadas ORDS para Adapter é bem simples. Se a estrutura de entrada e saída e também o caminho da chamada REST são idênticas, basta:
 
-- Deletar as integrações pontuais de banco de dados e substituir pelas ORDS
+- Deletar as integrações pontuais de banco de dados e substituir pelas ORDS (Em nosso tutorial, delete a integração SELECT_ADAPTER)
 
-Ao deletar o artefato de acesso ao banco via ORDS, os mapeamentos continuarão presentes na integração principal. Basta então importar o artefato novo equivalente à chamada ao banco (artefato com chamada ao banco de dados via adapter OIC). Ao importar esse novo artefato, o OIC manterá todos os mapeamentos anteriores, preservando a chamada sem necessidade de maiores configurações.
+Ao deletar o artefato de acesso ao banco via ORDS, os mapeamentos continuarão presentes na integração principal. 
+
+- Basta então importar o artefato novo equivalente à chamada ao banco (artefato com chamada ao banco de dados via ORDS. Lembre que o teste anterior está executando via Adapter OIC).
+
+- Ao importar esse novo artefato, o OIC manterá todos os mapeamentos anteriores, preservando a chamada sem necessidade de maiores configurações.
+
+> Conclusão: É possível implementar as integrações com as orquestrações, transformações e mante-las intactas se utilizarmos padrões de camadas para as chamadas ao banco de dados. Esse isolamento garante que no futuro, uma troca de método para chamar o banco tenha o menor nível de esforço.
 
 ### Referências
 
@@ -163,14 +270,4 @@ Ao deletar o artefato de acesso ao banco via ORDS, os mapeamentos continuarão p
 * [Improving the performance of Oracle Integration flows that use REST calls](https://www.ateam-oracle.com/post/improving-the-performance-of-oracle-integration-flows-that-use-rest-calls)
 * [Armazenando Respostas no Cache para Melhorar o Desempenho](https://docs.oracle.com/pt-br/iaas/Content/APIGateway/Tasks/apigatewayresponsecaching.htm)
 * [Using the Oracle Database Adapter with Oracle Integration Generation 2](https://docs.oracle.com/en/cloud/paas/integration-cloud/database-adapter/index.html#Oracle®-Cloud)
-
-### Estratégia para implementar integrações 
-
-    - Integração principal: Mantém
-    - Criar 2 integrações específicas de interface com o banco
-        - ORDS: JSON mesmo
-        - Adapter: JSON mesmo
-        - Mudanças ocorrem na reescrita deste componente
-        - Excluir o artefato ORDS e Importar o artefato Adapter: OK?????
-
 
