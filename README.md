@@ -2,7 +2,7 @@
 
 ### Introdução
 
-Em situações em que o OIC precisa trabalhar com banco de dados Oracle, porém a versão 11g, o OIC não conta com suporte para trabalhar com o Adapter. Logo, a saída para podermos acessar o banco 11g é trabalhar com ORDS (Oracle REST Data Source). Este componente permite expor as tabelas e procedures do banco Oracle 11g através de serviço REST o que possibilita o OIC de fazer estes acessos.
+Em situações em que o OIC precisa trabalhar com banco de dados Oracle, é possível utilizar o Adapter do OIC, porém na versão 11g, o OIC não conta com suporte para trabalhar com o Adapter. Logo, a saída para podermos acessar o banco 11g é trabalhar com ORDS (Oracle REST Data Source). Este componente permite expor as tabelas e procedures do banco Oracle 11g através de serviço REST o que possibilita o OIC de fazer estes acessos.
 
 O objetivo deste documento é mostrar que:
 
