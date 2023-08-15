@@ -40,81 +40,81 @@ Para tornar a tarefa de migrar ORDS para o Adapter de Banco de Dados de OIC com 
 Ao chamar a Integração específica de banco de dados, implementar a chamada com o Local Integration.
 Ao trocar o apontamento de ORDS para Adapter, não haverá perda de mapeamentos
 
-![img_1.png](img_1.png)
+![img_1.png](images/img_1.png)
 
 ### Criar a integração de chamada ao banco de dados por ORDS
 
 Criar uma conexão para o ORDS através de um Adapter REST conforme abaixo. Importante definir a URL endpoint para o serviço ORDS e suas credenciais de acesso.
 
-![img_3.png](img_3.png)
+![img_3.png](images/img_3.png)
 
 Como padrão, criar uma integração como trigger REST e estabelecer um caminho de chamada como mostra o exemplo abaixo:
 
-![img_4.png](img_4.png)
+![img_4.png](images/img_4.png)
 
-![img_5.png](img_5.png)
+![img_5.png](images/img_5.png)
 
-![img_6.png](img_6.png)
+![img_6.png](images/img_6.png)
 
-![img_10.png](img_10.png)
+![img_10.png](images/img_10.png)
 
-![img_11.png](img_11.png)
+![img_11.png](images/img_11.png)
 
-![img_12.png](img_12.png)
+![img_12.png](images/img_12.png)
 
-![img_13.png](img_13.png)
+![img_13.png](images/img_13.png)
 
-![img_32.png](img_32.png)
+![img_32.png](images/img_32.png)
 
 > Importante: Esta parte da configuração acima deve ser idêntica tanto para definir acessos do tipo ORDS como do tipo OIC Adapter.
 
 Agora vamos configurar a chamada ao banco de dados através do serviço ORDS:
 
-![img_15.png](img_15.png)
+![img_15.png](images/img_15.png)
 
-![img_16.png](img_16.png)
+![img_16.png](images/img_16.png)
 
-![img_17.png](img_17.png)
+![img_17.png](images/img_17.png)
 
-![img_18.png](img_18.png)
+![img_18.png](images/img_18.png)
 
 Você vai precisar chamar o serviço ORDS correspondente para obter o JSON e incluir na configuração do OIC:
 
-![img_33.png](img_33.png)
+![img_33.png](images/img_33.png)
 Agora inclua o JSON obtido no OIC e finalize a configuração:
 
-![img_34.png](img_34.png)
+![img_34.png](images/img_34.png)
 
 Pronto! Agora vamos finalizar as cofigurações mapeando os parâmetros de entrada e saída do serviço
-![img_21.png](img_21.png)
+![img_21.png](images/img_21.png)
 
-![img_22.png](img_22.png)
+![img_22.png](images/img_22.png)
 
-![img_23.png](img_23.png)
+![img_23.png](images/img_23.png)
 
 Clique em Validate e Close para finalizar a configuração de entrada
 
-![img_24.png](img_24.png)
+![img_24.png](images/img_24.png)
 
 Agora vamos configurar o retorno
 
-![img_25.png](img_25.png)
+![img_25.png](images/img_25.png)
 
-![img_35.png](img_35.png)
+![img_35.png](images/img_35.png)
 
 Clique em Validate e Close e finalize a configuração
 
 Finalize a configuração se sua chamada REST em ORDS com a parametrização dos dados de tracking, Salve a integração e ative-a:
 
-![img_27.png](img_27.png)
+![img_27.png](images/img_27.png)
 
-![img_28.png](img_28.png)
+![img_28.png](images/img_28.png)
 
-![img_29.png](img_29.png)
+![img_29.png](images/img_29.png)
 
-![img_30.png](img_30.png)
+![img_30.png](images/img_30.png)
 
-![img_31.png](img_31.png)
+![img_31.png](images/img_31.png)
 
 
 
@@ -122,9 +122,9 @@ Finalize a configuração se sua chamada REST em ORDS com a parametrização dos
 
 Teste sua integração com chamada via ORDS
 
-![img_37.png](img_37.png)
+![img_37.png](images/img_37.png)
 
-![img_36.png](img_36.png)
+![img_36.png](images/img_36.png)
 
 > Importante: Exporte sua integração SELECT ADAPTER pois iremos demonstrar como migrar uma integração ou outra (ORDS ou Adapter). Após a exportação, valide se o artefato .iar foi gerado e delete sua integração.
 
@@ -132,65 +132,65 @@ Teste sua integração com chamada via ORDS
 
 Criar uma conexão para o Banco de Dados Oracle através de seu Adapter correspondente conforme abaixo. Importante definir as credenciais de acesso ao banco de dados (Wallet, usuário/senha ou outro método adequado)
 
-![img_2.png](img_2.png)
+![img_2.png](images/img_2.png)
 
 Como padrão, criar uma integração como trigger REST e estabelecer um caminho de chamada como mostra o exemplo abaixo. Este início é exatamente idêntico ao padrão criado para ORDS.
 
 > Importante: Abaixo selecionamos o nome SELECT_ADAPTER exatamente como construído para a chamada ORDS. Isso só poderá ser feito caso você tenha deletado a integração anterior de ORDS. Caso queira manter as 2 integrações, escolha um nome diferente.
 
-![img_4.png](img_4.png)
+![img_4.png](images/img_4.png)
 
-![img_5.png](img_5.png)
+![img_5.png](images/img_5.png)
 
-![img_6.png](img_6.png)
+![img_6.png](images/img_6.png)
 
-![img_10.png](img_10.png)
+![img_10.png](images/img_10.png)
 
-![img_11.png](img_11.png)
+![img_11.png](images/img_11.png)
 
-![img_12.png](img_12.png)
+![img_12.png](images/img_12.png)
 
-![img_13.png](img_13.png)
+![img_13.png](images/img_13.png)
 
-![img_32.png](img_32.png)
+![img_32.png](images/img_32.png)
 
 > Importante: Esta parte da configuração acima deve ser idêntica tanto para definir acessos do tipo ORDS como do tipo OIC Adapter.
 
 Vamos construir o acesso ao banco de dados através do adapter OIC. 
 
-![img_38.png](img_38.png)
+![img_38.png](images/img_38.png)
 
-![img_39.png](img_39.png)
+![img_39.png](images/img_39.png)
 
-![img_40.png](img_40.png)
+![img_40.png](images/img_40.png)
 
-![img_41.png](img_41.png)
+![img_41.png](images/img_41.png)
 
-![img_42.png](img_42.png)
+![img_42.png](images/img_42.png)
 
-![img_43.png](img_43.png)
+![img_43.png](images/img_43.png)
 
-![img_46.png](img_46.png)
+![img_46.png](images/img_46.png)
 
-![img_47.png](img_47.png)
+![img_47.png](images/img_47.png)
 
-![img_48.png](img_48.png)
+![img_48.png](images/img_48.png)
 
 Defina também a estrutura JSON para os parâmetros de entrada e também os de saída.
 
-![img_49.png](img_49.png)
+![img_49.png](images/img_49.png)
 
-![img_50.png](img_50.png)
+![img_50.png](images/img_50.png)
 
-![img_51.png](img_51.png)
+![img_51.png](images/img_51.png)
 
-![img_52.png](img_52.png)
+![img_52.png](images/img_52.png)
 
 Da mesma forma como na integração por ORDS, execute o teste para validar.
 
-![img_37.png](img_37.png)
+![img_37.png](images/img_37.png)
 
-![img_36.png](img_36.png)
+![img_36.png](images/img_36.png)
 
 
 ### Criar a integração principal com chamada para o banco de dados
@@ -200,62 +200,62 @@ Isto dará a capacidade de migração sem muito esforço no caso de necessidade 
 
 Desta forma, definir a orquestração e realizar as chamadas ao banco de dados através de uma chamada do tipo "Local" conforme abaixo:
 
-![img_53.png](img_53.png)
+![img_53.png](images/img_53.png)
 
-![img_54.png](img_54.png)
+![img_54.png](images/img_54.png)
 
-![img_55.png](img_55.png)
+![img_55.png](images/img_55.png)
 
-![img_56.png](img_56.png)
+![img_56.png](images/img_56.png)
 
-![img_58.png](img_58.png)
+![img_58.png](images/img_58.png)
 
-![img_57.png](img_57.png)
+![img_57.png](images/img_57.png)
 
-![img_59.png](img_59.png)
+![img_59.png](images/img_59.png)
 
-![img_60.png](img_60.png)
+![img_60.png](images/img_60.png)
 
-![img_61.png](img_61.png)
+![img_61.png](images/img_61.png)
 
 Até aqui, é muito parecido com as integrações anteriores, porém é nesta camada de integração que as orquestrações, transformações de negócios ou outros processos devem ser implementados.
 Lembre, é aqui que a integração ocorre, quer seja por acesso via ORDS ou via Adapter OIC.
 
 Agora vamos implementar a chamada para o banco de dados através da integração específica via ORDS ou Adapter
 
-![img_62.png](img_62.png)
+![img_62.png](images/img_62.png)
 
-![img_63.png](img_63.png)
+![img_63.png](images/img_63.png)
 
-![img_64.png](img_64.png)
+![img_64.png](images/img_64.png)
 
-![img_65.png](img_65.png)
+![img_65.png](images/img_65.png)
 
-![img_66.png](img_66.png)
+![img_66.png](images/img_66.png)
 
 E agora vamos configurar os parametros de entrada e a saída JSON
 
-![img_67.png](img_67.png)
+![img_67.png](images/img_67.png)
 
-![img_68.png](img_68.png)
+![img_68.png](images/img_68.png)
 
-![img_69.png](img_69.png)
+![img_69.png](images/img_69.png)
 
-![img_70.png](img_70.png)
+![img_70.png](images/img_70.png)
 
 Vamos configurar as informações de tracking e testar a integração
 
-![img_71.png](img_71.png)
+![img_71.png](images/img_71.png)
 
-![img_72.png](img_72.png)
+![img_72.png](images/img_72.png)
 
-![img_73.png](img_73.png)
+![img_73.png](images/img_73.png)
 
-![img_74.png](img_74.png)
+![img_74.png](images/img_74.png)
 
-![img_75.png](img_75.png)
+![img_75.png](images/img_75.png)
 
-![img_76.png](img_76.png)
+![img_76.png](images/img_76.png)
 
 Sucesso! Sua integração principal foi implementada com sucesso.
 
