@@ -280,4 +280,4 @@ Ao deletar o artefato de acesso ao banco via ORDS, os mapeamentos continuarão p
 * [Improving the performance of Oracle Integration flows that use REST calls](https://www.ateam-oracle.com/post/improving-the-performance-of-oracle-integration-flows-that-use-rest-calls)
 * [Armazenando Respostas no Cache para Melhorar o Desempenho](https://docs.oracle.com/pt-br/iaas/Content/APIGateway/Tasks/apigatewayresponsecaching.htm)
 * [Using the Oracle Database Adapter with Oracle Integration Generation 2](https://docs.oracle.com/en/cloud/paas/integration-cloud/database-adapter/index.html#Oracle®-Cloud)
-
+* [ORDS Tutorial](https://docs.oracle.com/database/ords-17/QSORD/get-started-with-oracle-rest-data-services.htm#QSORD-GUID-DA141A40-43D8-46D6-8EBB-7FCE43BF79E8)
